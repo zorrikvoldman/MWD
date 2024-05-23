@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Simple Phaser Game</title>
+    <title>Simple Phaser Game with Menu</title>
     <script src="https://cdn.jsdelivr.net/npm/phaser@3.55.2/dist/phaser.js"></script>
     <style>
         body {
@@ -19,9 +19,48 @@
             width: 800px;
             height: 600px;
         }
+        #menu {
+            position: absolute;
+            top: 10px;
+            left: 10px;
+            background-color: rgba(255, 255, 255, 0.8);
+            padding: 10px;
+            border-radius: 5px;
+            display: flex;
+            gap: 10px;
+        }
+        #dialog {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background-color: rgba(0, 0, 0, 0.8);
+            color: white;
+            padding: 20px;
+            border-radius: 10px;
+            display: none;
+            flex-direction: column;
+            align-items: center;
+            gap: 10px;
+        }
+        button {
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
     </style>
 </head>
 <body>
+    <div id="menu">
+        <button id="open-dialog">Menu</button>
+    </div>
+    <div id="dialog">
+        <p>Choose an action:</p>
+        <button id="create-button">Create</button>
+        <button id="nuke-button">Nuke</button>
+        <button id="close-dialog">Close</button>
+    </div>
     <div id="game-container"></div>
     <script src="main.js"></script>
 </body>
