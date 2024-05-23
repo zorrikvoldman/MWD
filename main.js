@@ -38,6 +38,34 @@ function create() {
     player.setCollideWorldBounds(true);
 
     cursors = this.input.keyboard.createCursorKeys();
+
+    // Button and dialog functionality
+    const openDialogButton = document.getElementById('open-dialog');
+    const dialog = document.getElementById('dialog');
+    const createButton = document.getElementById('create-button');
+    const nukeButton = document.getElementById('nuke-button');
+    const closeDialogButton = document.getElementById('close-dialog');
+
+    openDialogButton.addEventListener('click', () => {
+        dialog.style.display = 'flex';
+    });
+
+    closeDialogButton.addEventListener('click', () => {
+        dialog.style.display = 'none';
+    });
+
+    createButton.addEventListener('click', () => {
+        dialog.style.display = 'none';
+        // Add create action logic here
+        console.log('Create action triggered');
+    });
+
+    nukeButton.addEventListener('click', () => {
+        dialog.style.display = 'none';
+        // Add nuke action logic here
+        console.log('Nuke action triggered');
+        player.setPosition(400, 300); // Example action for nuke
+    });
 }
 
 function update() {
