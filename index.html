@@ -49,6 +49,14 @@
             border-radius: 5px;
             cursor: pointer;
         }
+        #video-container {
+            display: none;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            z-index: 10;
+        }
     </style>
 </head>
 <body>
@@ -60,6 +68,12 @@
         <button id="create-button">Create</button>
         <button id="nuke-button">Nuke</button>
         <button id="close-dialog">Close</button>
+    </div>
+    <div id="video-container">
+        <video id="pepe-video" width="600" controls>
+            <source src="pepe-eating-ice-cream.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
     </div>
     <div id="game-container"></div>
     <script src="main.js"></script>
