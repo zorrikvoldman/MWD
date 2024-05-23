@@ -46,6 +46,9 @@ function create() {
     const nukeButton = document.getElementById('nuke-button');
     const closeDialogButton = document.getElementById('close-dialog');
 
+    const videoContainer = document.getElementById('video-container');
+    const pepeVideo = document.getElementById('pepe-video');
+
     openDialogButton.addEventListener('click', () => {
         dialog.style.display = 'flex';
     });
@@ -56,8 +59,8 @@ function create() {
 
     createButton.addEventListener('click', () => {
         dialog.style.display = 'none';
-        // Add create action logic here
-        console.log('Create action triggered');
+        videoContainer.style.display = 'flex';
+        pepeVideo.play();
     });
 
     nukeButton.addEventListener('click', () => {
@@ -65,6 +68,10 @@ function create() {
         // Add nuke action logic here
         console.log('Nuke action triggered');
         player.setPosition(400, 300); // Example action for nuke
+    });
+
+    pepeVideo.addEventListener('ended', () => {
+        videoContainer.style.display = 'none';
     });
 }
 
